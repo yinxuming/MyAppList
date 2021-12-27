@@ -1,0 +1,29 @@
+ext {
+    compileSdkVersion = 30
+    buildToolsVersion = "30.0.3"
+    minSdkVersion = 21
+    targetSdkVersion = 30
+
+    jvmTarget = '1.8'
+    javaCompatibility = JavaVersion.VERSION_1_8
+
+    // androidx
+    androidx_appcompat = "1.2.0"
+    androidx_v4 = "1.0.0"
+    androidx_constraintlayout = "2.0.4"
+    androidx_recyclerview = "1.1.0"
+    androidx_core_ktx = "1.0.2"
+    material = "1.2.1"
+    activityVersion = '1.2.3'
+    androidx_lifecycle = "2.3.1"
+    kotlinx_coroutines = "1.5.1"
+    androidx_core_ktx = "1.6.0"
+
+    coreTestingVersion = '2.1.0'
+    androidx_espresso_core = "androidx_runner"
+    junit = '4.+'
+    androidx_junit = '1.1.2'
+
+
+    room_version = "2.3.0"
+}

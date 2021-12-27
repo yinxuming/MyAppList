@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+
+    defaultConfig {
+        applicationId "cn.yinxm.applist"
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility project.javaCompatibility
+        targetCompatibility project.javaCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = project.jvmTarget
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    // test
+    androidTestImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.1.0"
+
+    // kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines"
+    implementation "androidx.core:core-ktx:$androidx_core_ktx"
+
+    // androidx
+    implementation "androidx.appcompat:appcompat:$androidx_appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$androidx_constraintlayout"
+    implementation "androidx.recyclerview:recyclerview:$androidx_recyclerview"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.activity:activity-ktx:$activityVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidx_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$androidx_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$androidx_lifecycle"
+
+    // androidx room
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt("androidx.room:room-compiler:$room_version")
+}
